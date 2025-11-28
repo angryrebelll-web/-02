@@ -466,6 +466,16 @@
             background-image: url('https://images.hdqwalls.com/download/mercedes-amg-gt63-the-beast-unleashed-yh-1920x1080.jpg');
         }
         
+        /* Фон блока "Преимущества" */
+        .advantages-bg {
+            background-image: url('https://images.hdqwalls.com/download/mercedes-amg-gt2-pro-2023-5k-td-1920x1080.jpg');
+        }
+        
+        /* Фон блока "Услуги" */
+        .services-bg {
+            background-image: url('https://images.hdqwalls.com/download/mercedes-amg-gt2-pro-2023-yk-1920x1080.jpg');
+        }
+        
         @media (max-width: 768px) {
             .about-bg {
                 background-image: url('https://images.hdqwalls.com/download/mercedes-amg-gt63-the-beast-unleashed-yh-1080x1920.jpg') !important;
@@ -473,6 +483,24 @@
             }
             
             .about-overlay {
+                background: linear-gradient(135deg, rgba(17, 17, 17, 0.35) 0%, rgba(17, 17, 17, 0.25) 100%) !important;
+            }
+            
+            .advantages-bg {
+                background-image: url('https://images.hdqwalls.com/download/mercedes-amg-gt2-pro-2023-5k-td-1080x1920.jpg') !important;
+                opacity: 0.85 !important;
+            }
+            
+            .advantages-overlay {
+                background: linear-gradient(135deg, rgba(17, 17, 17, 0.35) 0%, rgba(17, 17, 17, 0.25) 100%) !important;
+            }
+            
+            .services-bg {
+                background-image: url('https://images.hdqwalls.com/download/mercedes-amg-gt2-pro-2023-yk-1080x1920.jpg') !important;
+                opacity: 0.85 !important;
+            }
+            
+            .services-overlay {
                 background: linear-gradient(135deg, rgba(17, 17, 17, 0.35) 0%, rgba(17, 17, 17, 0.25) 100%) !important;
             }
         }
@@ -3170,9 +3198,9 @@
     <!-- Преимущества -->
     <section class="section" id="advantages" style="position: relative; background: var(--propellini-dark-secondary); overflow: hidden;">
         <!-- Фоновое изображение -->
-        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; background-image: url('https://i.pinimg.com/1200x/74/be/df/74bedfd6486e45e3d9b4577d8d42f33b.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: scroll; opacity: 0.5;"></div>
+        <div class="advantages-bg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: scroll; opacity: 0.8;"></div>
         <!-- Затемнение для читаемости -->
-        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; background: linear-gradient(135deg, rgba(17, 17, 17, 0.65) 0%, rgba(17, 17, 17, 0.55) 100%);"></div>
+        <div class="advantages-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; background: linear-gradient(135deg, rgba(17, 17, 17, 0.4) 0%, rgba(17, 17, 17, 0.3) 100%);"></div>
         
         <div class="max-w-7xl mx-auto px-6" style="position: relative; z-index: 2;">
             <div class="grid md:grid-cols-12 gap-8 items-start">
@@ -3226,28 +3254,12 @@
     </section>
 
     <!-- Услуги -->
-    <section class="section" id="services" style="position: relative; overflow: hidden; background: transparent;">
+    <section class="section" id="services" style="position: relative; overflow: hidden; background: var(--propellini-dark-secondary);">
         <!-- Фоновое изображение -->
-        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; overflow: hidden; min-height: 600px;">
-            <img 
-                src="https://www.carscoops.com/wp-content/uploads/2023/08/Aston-Martin-DB12-Volante-main-1024x576.jpg" 
-                srcset="https://www.carscoops.com/wp-content/uploads/2023/08/Aston-Martin-DB12-Volante-main-1024x576.jpg 1024w,
-                        https://www.carscoops.com/wp-content/uploads/2023/08/Aston-Martin-DB12-Volante-main-1024x576.jpg 768w,
-                        https://www.carscoops.com/wp-content/uploads/2023/08/Aston-Martin-DB12-Volante-main-1024x576.jpg 480w"
-                sizes="100vw"
-                alt="Aston Martin DB12 Volante" 
-                loading="eager"
-                fetchpriority="high"
-                decoding="async"
-                onload="this.classList.add('loaded'); this.style.opacity='0.6'"
-                onerror="this.style.display='none'"
-                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center center; min-height: 600px;"
-            >
-            <!-- Placeholder для быстрой загрузки -->
-            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(17, 17, 17, 0.8) 0%, rgba(17, 17, 17, 0.7) 100%); z-index: -1;" class="image-placeholder"></div>
-        </div>
+        <!-- Фоновое изображение -->
+        <div class="services-bg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: scroll; opacity: 0.8; min-height: 600px;"></div>
         <!-- Затемнение для читаемости -->
-        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; background: linear-gradient(135deg, rgba(17, 17, 17, 0.7) 0%, rgba(17, 17, 17, 0.6) 100%);"></div>
+        <div class="services-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; background: linear-gradient(135deg, rgba(17, 17, 17, 0.4) 0%, rgba(17, 17, 17, 0.3) 100%);"></div>
         <div class="max-w-7xl mx-auto px-6" style="position: relative; z-index: 2;">
             <div class="grid md:grid-cols-12 gap-8 items-start">
                 <!-- Заголовок слева -->
