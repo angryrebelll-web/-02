@@ -517,8 +517,28 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 180px 20px 80px;
+            padding: 120px 20px 80px;
             will-change: transform;
+        }
+        
+        @media (min-width: 769px) {
+            .hero-content {
+                padding: 100px 20px 60px;
+            }
+            
+            .hero-content .max-w-5xl {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .hero-prices,
+            .hero-offer,
+            .hero-content .btn-primary {
+                margin-left: auto;
+                margin-right: auto;
+            }
         }
 
         /* Параллакс эффект для секций */
@@ -4838,18 +4858,7 @@
         
         @media (max-width: 768px) {
             .mobile-sticky-btn {
-                display: flex;
-                position: fixed;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                z-index: 1001;
-                padding: 16px;
-                background: rgba(10, 10, 10, 0.95);
-                backdrop-filter: blur(20px);
-                -webkit-backdrop-filter: blur(20px);
-                border-top: 1px solid rgba(22, 132, 145, 0.3);
-                box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.5);
+                display: none !important;
             }
             
             .mobile-sticky-btn button {
