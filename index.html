@@ -4302,24 +4302,23 @@
                 const calculatorIframe = document.getElementById('calculator-iframe');
                 
                 // Сброс калькулятора при закрытии
-                if (calculatorIframe && calculatorIframe.contentWindow && typeof calculatorIframe.contentWindow.resetCalculator === 'function') {
-                    calculatorIframe.contentWindow.resetCalculator();
+                if (calculatorIframe && calculatorIframe.contentWindow) {
+                    try {
+                        // Пытаемся вызвать resetCalculator напрямую
+                        if (typeof calculatorIframe.contentWindow.resetCalculator === 'function') {
+                            calculatorIframe.contentWindow.resetCalculator();
+                        } else {
+                            // Если прямой вызов не работает, используем postMessage
+                            calculatorIframe.contentWindow.postMessage({ type: 'resetCalculator' }, '*');
+                        }
+                    } catch (e) {
+                        console.log('Не удалось сбросить калькулятор:', e);
+                    }
                 }
                 
                 if (modal) {
                     modal.classList.remove('active');
                     document.body.style.overflow = '';
-                    
-                    // Сброс калькулятора при закрытии
-                    const calculatorIframe = document.getElementById('calculator-iframe');
-                    if (calculatorIframe && calculatorIframe.contentWindow) {
-                        try {
-                            // Отправляем сообщение в iframe для сброса состояния
-                            calculatorIframe.contentWindow.postMessage({ type: 'resetCalculator' }, '*');
-                        } catch (e) {
-                            console.log('Не удалось сбросить калькулятор:', e);
-                        }
-                    }
                 }
                 
                 // Показываем плавающую кнопку "Рассчитать" при закрытии калькулятора
