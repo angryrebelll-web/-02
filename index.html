@@ -461,6 +461,22 @@
             z-index: 0;
         }
 
+        /* Фон блока "Кто мы" */
+        .about-bg {
+            background-image: url('https://images.hdqwalls.com/download/mercedes-amg-gt63-the-beast-unleashed-yh-1920x1080.jpg');
+        }
+        
+        @media (max-width: 768px) {
+            .about-bg {
+                background-image: url('https://images.hdqwalls.com/download/mercedes-amg-gt63-the-beast-unleashed-yh-1080x1920.jpg') !important;
+                opacity: 0.85 !important;
+            }
+            
+            .about-overlay {
+                background: linear-gradient(135deg, rgba(17, 17, 17, 0.35) 0%, rgba(17, 17, 17, 0.25) 100%) !important;
+            }
+        }
+        
         .hero-bg {
             position: absolute;
             top: 0;
@@ -3107,9 +3123,9 @@
     <!-- Кто мы -->
     <section class="section" id="about" style="position: relative; background: var(--propellini-dark-secondary); overflow: hidden;">
         <!-- Фоновое изображение -->
-        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; background-image: url('https://i.ytimg.com/vi/w95I748Izeo/maxresdefault.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: scroll; opacity: 0.5;"></div>
+        <div class="about-bg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: scroll; opacity: 0.8;"></div>
         <!-- Затемнение для читаемости -->
-        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; background: linear-gradient(135deg, rgba(17, 17, 17, 0.65) 0%, rgba(17, 17, 17, 0.55) 100%);"></div>
+        <div class="about-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; background: linear-gradient(135deg, rgba(17, 17, 17, 0.4) 0%, rgba(17, 17, 17, 0.3) 100%);"></div>
         
         <div class="max-w-7xl mx-auto px-6" style="position: relative; z-index: 2;">
             <div class="grid md:grid-cols-12 gap-8 items-start">
