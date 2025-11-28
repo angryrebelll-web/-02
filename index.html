@@ -2797,6 +2797,35 @@
             div:not(.btn-primary):not(.price-card-shimmer):not(.hero-prices) {
                 text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
             }
+            
+            /* Фон для блока статистики на мобильных */
+            .stats-bg-mobile {
+                opacity: 0.4 !important;
+                display: block !important;
+            }
+            
+            .stats-overlay {
+                background: linear-gradient(135deg, rgba(17, 17, 17, 0.85) 0%, rgba(17, 17, 17, 0.75) 100%) !important;
+            }
+            
+            /* Улучшаем читаемость карточек статистики на фоне */
+            .premium-benefit-card {
+                background: rgba(15, 15, 15, 0.95) !important;
+                border-color: rgba(22, 132, 145, 0.4) !important;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
+            }
+            
+            .premium-benefit-card h3,
+            .premium-benefit-card p {
+                text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
+            }
+        }
+        
+        @media (min-width: 769px) {
+            /* На desktop скрываем мобильный фон */
+            .stats-bg-mobile {
+                display: none !important;
+            }
         }
     </style>
 </head>
@@ -2920,8 +2949,13 @@
     </section>
 
     <!-- УТП блоки -->
-    <section class="section" style="background: var(--propellini-dark-secondary); padding-top: 80px; padding-bottom: 80px;">
-        <div class="max-w-7xl mx-auto px-6">
+    <section class="section stats-section" style="position: relative; background: var(--propellini-dark-secondary); padding-top: 80px; padding-bottom: 80px; overflow: hidden;">
+        <!-- Фоновое изображение для мобильной версии -->
+        <div class="stats-bg-mobile" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; background-image: url('https://images.hdqwalls.com/download/mercedes-amg-gt2-pro-5k-89-1080x1920.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; opacity: 0; transition: opacity 0.6s ease;"></div>
+        <!-- Затемнение для читаемости -->
+        <div class="stats-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; background: linear-gradient(135deg, rgba(17, 17, 17, 0.75) 0%, rgba(17, 17, 17, 0.65) 100%);"></div>
+        
+        <div class="max-w-7xl mx-auto px-6" style="position: relative; z-index: 2;">
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div class="slide-up premium-benefit-card" style="background: rgba(18, 18, 18, 0.8); border: 1px solid rgba(22, 132, 145, 0.22); padding: 32px; border-radius: 12px; backdrop-filter: none; transition: all 0.3s ease; text-align: center;">
                     <div style="width: 64px; height: 64px; background: linear-gradient(135deg, rgba(22, 132, 145, 0.3), rgba(22, 132, 145, 0.1)); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; border: 1px solid rgba(22, 132, 145, 0.3);">
