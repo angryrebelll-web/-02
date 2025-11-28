@@ -2524,6 +2524,189 @@
             border-radius: 999px;
             transition: width 0.2s ease;
         }
+        
+        /* ===============================
+           ПРЕМИАЛЬНЫЙ БЛОК БОНУСОВ
+           =============================== */
+        
+        .bonuses-premium {
+            background: #0C0C0C;
+            color: #ffffff;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .bonuses-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #0C0C0C;
+            z-index: 0;
+            will-change: transform;
+        }
+        
+        .bonuses-gradient {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 40%;
+            background: linear-gradient(180deg, rgba(22, 132, 145, 0.07) 0%, transparent 100%);
+            z-index: 1;
+            pointer-events: none;
+        }
+        
+        .bonuses-noise {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0.015;
+            background-image: 
+                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.03) 2px, rgba(255,255,255,0.03) 4px),
+                repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(255,255,255,0.03) 2px, rgba(255,255,255,0.03) 4px);
+            background-size: 4px 4px;
+            z-index: 1;
+            pointer-events: none;
+        }
+        
+        .bonuses-label {
+            color: rgba(22, 132, 145, 0.8);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 12px;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .bonuses-title {
+            color: #ffffff;
+            font-size: 48px;
+            font-weight: 300;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 0.01em;
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+        
+        .bonuses-underline {
+            width: 120px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent 0%, #168491 50%, transparent 100%);
+            margin: 0 auto;
+            border-radius: 2px;
+        }
+        
+        .bonus-card {
+            background: rgba(18, 18, 18, 0.6);
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid rgba(22, 132, 145, 0.15);
+            backdrop-filter: blur(10px);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            cursor: default;
+        }
+        
+        .bonus-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(22, 132, 145, 0.4);
+            box-shadow: 0 20px 40px rgba(22, 132, 145, 0.15), 0 0 0 1px rgba(22, 132, 145, 0.2);
+        }
+        
+        .bonus-card:hover .bonus-card-glow {
+            opacity: 1;
+        }
+        
+        .bonus-card-glow {
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(22, 132, 145, 0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            pointer-events: none;
+        }
+        
+        .bonus-title {
+            color: #ffffff;
+            font-size: 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            letter-spacing: 0.01em;
+            margin-bottom: 0;
+            position: relative;
+            z-index: 1;
+            line-height: 1.4;
+        }
+        
+        .bonuses-grid {
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Адаптивность для мобильных */
+        @media (max-width: 768px) {
+            .bonuses-premium .max-w-7xl {
+                padding-top: 60px !important;
+                padding-bottom: 60px !important;
+            }
+            
+            .bonuses-label {
+                font-size: 11px;
+                margin-bottom: 16px;
+            }
+            
+            .bonuses-title {
+                font-size: 32px;
+                margin-bottom: 20px;
+            }
+            
+            .bonuses-underline {
+                width: 80px;
+                height: 2px;
+            }
+            
+            .bonus-card {
+                padding: 28px;
+                border-radius: 12px;
+            }
+            
+            .bonus-title {
+                font-size: 18px;
+            }
+            
+            .bonuses-grid {
+                gap: 16px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .bonuses-premium .max-w-7xl {
+                padding-top: 50px !important;
+                padding-bottom: 50px !important;
+            }
+            
+            .bonuses-title {
+                font-size: 28px;
+            }
+            
+            .bonus-card {
+                padding: 24px;
+            }
+            
+            .bonus-title {
+                font-size: 16px;
+            }
+        }
     </style>
 </head>
 <body>
